@@ -7,16 +7,6 @@ import (
 	"log"
 )
 
-type Response map[string]any
-
-type User struct {
-	firstname string
-	lastname  string
-}
-
-func (userReference User) getFullName() string {
-	return userReference.firstname + " " + userReference.lastname
-}
 func main() {
 	database.InitDb()
 	router := gin.Default()
