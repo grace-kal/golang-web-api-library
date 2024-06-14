@@ -18,7 +18,6 @@ func InitDb() {
 	var err error
 	db, err = sql.Open("sqlite", "local.db")
 	if err != nil {
-
 		fmt.Println(err)
 		panic("Database connection lost")
 	}
