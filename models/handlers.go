@@ -72,7 +72,7 @@ func UpdateBook(c *gin.Context) {
 	id := c.Param("id")
 
 	var existingBook Book
-	row := database.GetDb().QueryRow("SELECT id, title, isbn, author, release FROM books WHERE id = ?", id)
+	row := database.GetDb().QueryRow("SELECT * FROM books WHERE id = ?", id)
 	err := row.Scan(&existingBook.ID, &existingBook.Title, &existingBook.ISBN, &existingBook.Author, &existingBook.Release)
 	if err != nil {
 		if err == sql.ErrNoRows {
